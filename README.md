@@ -1,2 +1,2 @@
 # nyu-networking
-Repository for NYU CS GY 6843 Computer Networking course Python Assignments
+Repository for NYU CS GY 6843 Computer Networking course Python Programming Assignments
