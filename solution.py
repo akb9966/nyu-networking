@@ -9,7 +9,6 @@ def webServer(port=13331):
    #Prepare a sever socket
    #Fill in start
    serverSocket.bind((gethostname(), port))
-   print(gethostname())
    serverSocket.listen(5)
    #Fill in end
 
