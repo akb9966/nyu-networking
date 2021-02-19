@@ -2,7 +2,6 @@
 #import socket module
 from socket import *
 import sys # In order to terminate the program
-import time
 
 def webServer(port=13331):
    serverSocket = socket(AF_INET, SOCK_STREAM)
@@ -26,8 +25,6 @@ def webServer(port=13331):
          #Send one HTTP header line into socket
          #Fill in start
          header = "HTTP/1.1 200 OK\n"
-         time_now = time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime())
-         header += 'Date: {now}\n'.format(now=time_now)
          header += 'Server: Simple-Python-Server\n'
          header += 'Connection: close\n\n'
          connectionSocket.send(header.encode())
@@ -41,8 +38,6 @@ def webServer(port=13331):
          #Send response message for file not found (404)
          #Fill in start
          header = 'HTTP/1.1 404 Not Found\n'
-         time_now = time.strftime("%a, %d %b %Y %H:%M:%S", time.localtime())
-         header += 'Date: {now}\n'.format(now=time_now)
          header += 'Server: Simple-Python-Server\n'
          header += 'Connection: close\n\n'
          connectionSocket.send(header.encode())
