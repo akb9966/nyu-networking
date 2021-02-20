@@ -8,7 +8,7 @@ def webServer(port=13331):
 
    #Prepare a sever socket
    #Fill in start
-   serverSocket.bind((gethostname(), port))
+   serverSocket.bind(('localhost', port))
    serverSocket.listen(5)
    #Fill in end
 
@@ -24,7 +24,6 @@ def webServer(port=13331):
          #Send one HTTP header line into socket
          #Fill in start
          header = "HTTP/1.1 200 OK\n"
-         header += 'Server: Simple-Python-Server\n'
          header += 'Connection: close\n\n'
          connectionSocket.send(header.encode())
          #Fill in end
@@ -37,7 +36,6 @@ def webServer(port=13331):
          #Send response message for file not found (404)
          #Fill in start
          header = 'HTTP/1.1 404 Not Found\n'
-         header += 'Server: Simple-Python-Server\n'
          header += 'Connection: close\n\n'
          connectionSocket.send(header.encode())
          #Fill in end
